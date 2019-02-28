@@ -15,6 +15,15 @@ export class UsuarioService {
                         map(resp => {
                           return resp['data'];
                         })
-                      )
+                      );
+  }
+
+  getUserById(id: string) {
+    return this._http.get(`${this.url}users/${id}`)
+                      .pipe(
+                        map(resp => {
+                          return resp['data'];
+                        })
+                      );
   }
 }
